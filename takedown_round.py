@@ -2,6 +2,7 @@ from random import randint
 from update_health_bars import update_health_bars
 from fighter_take_damage import fighter_take_damage
 import os
+from animate_health_bar import animate_health_bar
 
 clear = lambda: os.system('clear')
 
@@ -40,6 +41,7 @@ def takedown_round(attacker, defender):
         input("Press 'enter' to continue...")
     else:
         
+        animate_health_bar(attacker, 0, defender, 10) 
         fighter_take_damage(defender, 10)
         clear()
         clear()

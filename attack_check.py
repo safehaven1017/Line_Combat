@@ -1,5 +1,7 @@
 from fighter_take_damage import fighter_take_damage
 from update_health_bars import update_health_bars
+from animate_health_bar import animate_health_bar
+import os
 
 # THIS FUNCTION WILL RUN IF DEFENSE CHECKS FOR BOTH FIGHTERS RETURN FALSE. 
 # WHEN BOTH FIGHTERS USE THE SAME ATTACK, THEY HAVE A SPECIAL INTERACTION.
@@ -7,7 +9,12 @@ from update_health_bars import update_health_bars
 
 
 def attack_check(attacker_a, attacker_b):
+    clear = lambda: os.system('clear')
+
     if attacker_a.offense == attacker_b.offense and attacker_a.offense == "Punch":
+        animate_health_bar(attacker_a, 5, attacker_b, 5) 
+        clear()
+        clear()
         fighter_take_damage(attacker_a, 5)
         fighter_take_damage(attacker_b, 5)
         update_health_bars(attacker_a, attacker_b)
@@ -21,6 +28,9 @@ def attack_check(attacker_a, attacker_b):
         return True
     
     elif attacker_a.offense == attacker_b.offense and attacker_a.offense == "Low Kick":
+        animate_health_bar(attacker_a, 7, attacker_b, 7) 
+        clear()
+        clear()
         fighter_take_damage(attacker_a, 7)
         fighter_take_damage(attacker_b, 7)
         update_health_bars(attacker_a, attacker_b)
@@ -40,6 +50,9 @@ def attack_check(attacker_a, attacker_b):
         return True
     
     elif attacker_a.offense == attacker_b.offense and attacker_a.offense == "Takedown":
+        animate_health_bar(attacker_a, 10, attacker_b, 10) 
+        clear()
+        clear()
         fighter_take_damage(attacker_a, 10)
         fighter_take_damage(attacker_b, 10)
         update_health_bars(attacker_a, attacker_b)

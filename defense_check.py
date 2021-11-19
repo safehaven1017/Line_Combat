@@ -2,6 +2,7 @@ from deal_attacks import deal_attacks
 from fighter_classes import fighter
 from fighter_take_damage import fighter_take_damage
 from update_health_bars import update_health_bars
+from animate_health_bar import animate_health_bar
 import os
 
 # THIS FUNCTION WILL COMPARE BOTH FIGHTER'S OFFENSE AND DEFENSE. IT WILL RETURN TRUE IF THE FIGHTER PASSES A DEFENSE CHECK
@@ -24,9 +25,12 @@ def defense_check(defender, attacker):
     # IF FIGHTER 1 PICKS "KICK CHECK" IN THE RIGHT OCCASION, MOST DAMAGE IS MITIGATED AND APPLIES "FRACTURED SHIN" ON THE ATTACKER
     elif defender.defense == "Kick Check" and attacker.offense == "Low Kick":
         if defender.health > 3:
+            animate_health_bar(attacker, 0, defender, 3) 
             fighter_take_damage(defender, 3)
         else:
+            animate_health_bar(attacker, 0, defender, 3) 
             defender.health = 1
+        animate_health_bar(attacker, 5, defender, 0) 
         fighter_take_damage(attacker, 5)
         attacker.debuff_flag = 0
         update_health_bars(attacker, defender)
@@ -40,6 +44,7 @@ def defense_check(defender, attacker):
 
     # IF FIGHTER_1 PICKS "LEG CATCH" IN THE RIGHT OCCASION, DAMAGE IS MITIGATED AND GETS A "LEG SWEEP"
     elif defender.defense == "Leg Catch" and attacker.offense == "Roundhouse Kick":
+        animate_health_bar(attacker, 7, defender, 0) 
         fighter_take_damage(attacker, 7)
         attacker.debuff_flag = 0
         update_health_bars(attacker, defender)
@@ -51,6 +56,7 @@ def defense_check(defender, attacker):
 
     # IF FIGHTER_1 PICKS "JUDO COUNTER" IN THE RIGHT OCCASION, DAMAGE IS MITIGATED AND GETS A TAKEDOWN
     elif defender.defense == "Judo Counter" and attacker.offense == "Takedown":
+        animate_health_bar(attacker, 7, defender, 0) 
         fighter_take_damage(attacker, 7)
         attacker.debuff_flag = 0
         update_health_bars(attacker, defender)
