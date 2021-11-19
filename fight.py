@@ -27,12 +27,7 @@ def fight(p1, p2):
 
     while p1.health > 0 and p2.health > 0:
         
-        if p1.debuff_flag == 1:
-            p1.debuff_flag = 0
-            p1.status = "Normal"
-        if p2.debuff_flag == 1:
-            p2.debuff_flag = 0
-            p2.status = "Normal"
+        
 
         if p1.status == "Taken Down":
 
@@ -41,6 +36,13 @@ def fight(p1, p2):
         elif p2.status == "Taken Down":
 
             takedown_round(p1, p2)
+        
+        if p1.debuff_flag == 1:
+            p1.debuff_flag = 0
+            p1.status = "Normal"
+        if p2.debuff_flag == 1:
+            p2.debuff_flag = 0
+            p2.status = "Normal"
 
         else:
             
