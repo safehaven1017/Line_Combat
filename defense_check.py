@@ -2,10 +2,17 @@ from deal_attacks import deal_attacks
 from fighter_classes import fighter
 from fighter_take_damage import fighter_take_damage
 from update_health_bars import update_health_bars
+import os
 
 # THIS FUNCTION WILL COMPARE BOTH FIGHTER'S OFFENSE AND DEFENSE. IT WILL RETURN TRUE IF THE FIGHTER PASSES A DEFENSE CHECK
 
+clear = lambda: os.system('clear')
+
 def defense_check(defender, attacker):
+    
+    clear()
+    clear()
+    
     # IF FIGHTER_1 PICKS "PARRY" IN THE RIGHT OCCASION, DAMAGE IS MITIGATED
     if defender.defense == "Parry" and attacker.offense == "Punch":
         update_health_bars(attacker, defender)

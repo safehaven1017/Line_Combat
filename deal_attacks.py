@@ -4,9 +4,14 @@
 from fighter_classes import fighter
 from fighter_take_damage import fighter_take_damage
 from update_health_bars import update_health_bars
+import os
 
+clear = lambda: os.system('clear')
 
 def deal_attacks(attacker, defender):
+
+    clear()
+    clear()
     
     # ATTACKER ARGUMENT GOES FIRST
     if attacker.offense == "Punch":

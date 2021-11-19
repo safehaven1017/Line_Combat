@@ -1,9 +1,9 @@
 # CREATE HEALTH BAR USING CHARACTERS.
 def create_health_bar_left(current_health, max_health):
     # HEALTH REPRESENTED BY THE "l" CHARACTER
-    health_string = "l"
+    health_string = "|"
     # MISSING HEALTH REPRESENTED BY A SPACE
-    missing_health_string = " "
+    missing_health_string = "-"
     # WE WILL APPEND CHARACTERS TO THIS STRING
     health_bar_string = ""
 
@@ -33,8 +33,8 @@ def create_health_bar_left(current_health, max_health):
 # THAT THE NUMBER "EMPTY SPACE" MARKS THE BEGINNING INDEX OF THE LOOP FOR THE BAR.
 
 def create_health_bar_right(current_health, max_health):
-    health_string = "l"
-    missing_health_string = " "
+    health_string = "|"
+    missing_health_string = "-"
     empty_space_string = " "
     health_bar_string = ""
 

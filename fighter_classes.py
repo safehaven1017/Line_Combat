@@ -12,6 +12,7 @@ class fighter(object):
         self.offense = "Punch"
         self.defense = "Parry"
         self.debuff_flag = 0
+        self.advantage = False
 
     def get_name(self):
         return self.name
@@ -37,6 +38,7 @@ class npcFighter(fighter):
         self.offense = "Punch"
         self.defense = "Parry"
         self.debuff_flag = 0
+        self.advantage = False
     
     def roll_offense(self):
 
@@ -57,6 +59,11 @@ class npcFighter(fighter):
         defensive_list = ["Parry", "Kick Check", "Leg Catch", "Judo Counter"]
         random_defense_int = randrange(4)
         self.defense = defensive_list[random_defense_int]
+    
+    def random_name(self):
+        name_list = ["Robot Wrangler", "Angry Android", "Nasty NPC", "Callous Computer", "Malicious Machine", "Serious System", "Pestering PC", "Digital Destroyer", "Number Cruncher"]
+        random_index = randrange(9)
+        self.name = name_list[random_index]
         
     def get_name(self):
         return self.name

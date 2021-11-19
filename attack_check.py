@@ -26,8 +26,8 @@ def attack_check(attacker_a, attacker_b):
         update_health_bars(attacker_a, attacker_b)
         print("Both fighters threw low kicks and hit each others shins! Ouch!!!! Both fighters take 7 damage.")
         print("They also decide not to kick next round.")
-        attacker_a.status = "Broken Shins"
-        attacker_b.status = "Broken Shins"
+        attacker_a.status = "Broken Shin"
+        attacker_b.status = "Broken Shin"
         attacker_a.debuff_flag = 0
         attacker_b.debuff_flag = 0
         input("Press enter to continue...")
