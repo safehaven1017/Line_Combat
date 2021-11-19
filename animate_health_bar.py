@@ -18,28 +18,28 @@ def animate_health_bar(object_a, damage_a, object_b, damage_b):
     for i in range(4):
         if isinstance(object_a, npcFighter) == True:
             clear()
-            create_health_bar_left(flashing_index_min_b, flashing_index_max_b)
-            create_health_bar_right(flashing_index_min_a, flashing_index_max_a)
+            create_health_bar_left(flashing_index_min_b, object_b.max_health)
+            create_health_bar_right(flashing_index_min_a, object_a.max_health)
     
             time.sleep(sleep_time)
             clear()
         else:     
             clear()
-            create_health_bar_left(flashing_index_min_a, flashing_index_max_a)
-            create_health_bar_right(flashing_index_min_b, flashing_index_max_b)
+            create_health_bar_left(flashing_index_min_a, object_a.max_health)
+            create_health_bar_right(flashing_index_min_b, object_b.max_health)
             
             time.sleep(sleep_time)
             clear()
         if isinstance(object_a, npcFighter) == True:
-            create_health_bar_left(object_b.health, object_b.health)
-            create_health_bar_right(object_a.health, object_a.health)
+            create_health_bar_left(flashing_index_max_b, object_b.max_health)
+            create_health_bar_right(flashing_index_max_a, object_a.max_health)
     
             time.sleep(sleep_time)
 
             
         else:     
-            create_health_bar_left(object_a.health, object_a.health)
-            create_health_bar_right(object_b.health, object_b.health)
+            create_health_bar_left(flashing_index_max_a, object_a.max_health)
+            create_health_bar_right(flashing_index_max_b, object_b.max_health)
             
             time.sleep(sleep_time)
         
