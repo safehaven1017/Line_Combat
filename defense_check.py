@@ -16,6 +16,7 @@ def defense_check(defender, attacker):
     
     # IF FIGHTER_1 PICKS "PARRY" IN THE RIGHT OCCASION, DAMAGE IS MITIGATED
     if defender.defense == "Parry" and attacker.offense == "Punch":
+        clear()
         update_health_bars(attacker, defender)
         print(f"{defender.get_name()} parried {attacker.get_name()}'s punch! {defender.get_name()} takes no damage!")
         input("Press enter to continue...")
@@ -25,12 +26,16 @@ def defense_check(defender, attacker):
     # IF FIGHTER 1 PICKS "KICK CHECK" IN THE RIGHT OCCASION, MOST DAMAGE IS MITIGATED AND APPLIES "FRACTURED SHIN" ON THE ATTACKER
     elif defender.defense == "Kick Check" and attacker.offense == "Low Kick":
         if defender.health > 3:
+            clear()
             animate_health_bar(attacker, 0, defender, 3) 
             fighter_take_damage(defender, 3)
         else:
+            clear()
             animate_health_bar(attacker, 0, defender, 3) 
             defender.health = 1
+        clear()
         animate_health_bar(attacker, 5, defender, 0) 
+        clear()
         fighter_take_damage(attacker, 5)
         attacker.debuff_flag = 0
         update_health_bars(attacker, defender)
@@ -44,9 +49,11 @@ def defense_check(defender, attacker):
 
     # IF FIGHTER_1 PICKS "LEG CATCH" IN THE RIGHT OCCASION, DAMAGE IS MITIGATED AND GETS A "LEG SWEEP"
     elif defender.defense == "Leg Catch" and attacker.offense == "Roundhouse Kick":
+        clear()
         animate_health_bar(attacker, 7, defender, 0) 
         fighter_take_damage(attacker, 7)
         attacker.debuff_flag = 0
+        clear()
         update_health_bars(attacker, defender)
         print(f"{defender.get_name()} caught {attacker.get_name()}'s kick! {defender.get_name()} takes no damage,")
         print(f"and swept {attacker.get_name()} for 7 damage! {attacker.get_name()} will be taken down next round.")
@@ -56,9 +63,11 @@ def defense_check(defender, attacker):
 
     # IF FIGHTER_1 PICKS "JUDO COUNTER" IN THE RIGHT OCCASION, DAMAGE IS MITIGATED AND GETS A TAKEDOWN
     elif defender.defense == "Judo Counter" and attacker.offense == "Takedown":
+        clear()
         animate_health_bar(attacker, 7, defender, 0) 
         fighter_take_damage(attacker, 7)
         attacker.debuff_flag = 0
+        clear()
         update_health_bars(attacker, defender)
         print(f"{defender.get_name()} performed a judo counter on {attacker.get_name()}'s takedown attempt!")
         print(f"{defender.get_name()} takes no damage, and {attacker.get_name()} takes 10 damage! {attacker.get_name()} is taken down next round instead!")
