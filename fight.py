@@ -19,6 +19,10 @@ def fight(p1, p2):
 
     p1.health = p1.max_health
     p2.health = p2.max_health
+    p1.status = "Normal"
+    p2.status = "Normal"
+    p1.debuff_flag = 0
+    p2.debuff_flag = 0
 
     print(f"Time to fight!!! Your opponent will be {p2.get_name()}!")
     input("Press 'Enter' to continue...")
